@@ -1,0 +1,7 @@
+<h1>Update Price for {{ object.name }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+<a href="{% url 'menu_list' %}">Back to Menus</a>
