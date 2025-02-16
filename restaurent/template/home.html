@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="text-center text-light my-5">Movie list</h3>
+<div class="row">
+
+{% for i in movie %}
+
+<div class="col-4 m-3"><div class="card" style="width: 18rem;">
+
+<img src="{{i.image.url}}" height="200px" width="200px" class="card-img-top" alt="...">
+
+
+<div class="card-body">
+
+<h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.year}}</p>
+    <a href="{% url 'detail' i.id %}" class="btn btn-danger">Details </a>  <!-- Passing the movie ID here -->
+
+</div>
+</div></div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

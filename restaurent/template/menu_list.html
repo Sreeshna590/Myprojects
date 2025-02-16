@@ -1,0 +1,27 @@
+
+
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="text-center text-light my-5">Movie list</h3>
+<div class="row">
+{% for menu in menus %}
+<div class="col-4 m-3"><div class="card" style="width: 18rem;">
+
+<div class="card-body">
+
+<h5 class="card-title">{{ menu.name }}</h5>
+    <p class="card-text">{{ menu.description }}</p>
+    <a href="{% url 'menu_detail' menu.id %}" class="btn btn-danger">Details </a>  <!-- Passing the movie ID here -->
+
+</div>
+</div></div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
+

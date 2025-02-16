@@ -1,0 +1,13 @@
+<h1>{{ menu.name }}</h1>
+<p>{{ menu.description }}</p>
+<ul>
+    {% for item in menu.items.all %}
+        <li>{{ item.name }} - ${{ item.price }}
+            {% if item.is_vegetarian %}(Vegetarian){% endif %}
+            <a href="{% url 'update_price' item.id %}">Update Price</a>
+            <a href="{% url 'delete' item.id %}">Delete</a>
+
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'menu_list' %}">Back to Menus</a>
